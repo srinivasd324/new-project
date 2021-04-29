@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import React, {useState} from 'react';
 import './App.css';
 import AddUser from './components/Users/AddUser';
 import UserList from './components/Users/UserList';
+import Wrapper from './components/Helper/Wrapper'
 
 const  App = () => {
   const[enteredUserValues, setUserValues] = useState([]);
@@ -16,10 +16,10 @@ const  App = () => {
 
 
   return (
-    <div>
+    <React.Fragment>
       <AddUser onSubmitUser={enteredValues}/>
       {enteredUserValues.length && <UserList users={enteredUserValues} />}
-    </div>
+    </React.Fragment>
   );
 }
 
